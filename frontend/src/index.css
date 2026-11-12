@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #11100F;
+    color: #E2D9CC;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Vintage Investigator Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #141210;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3B332B;
+    border-radius: 4px;
+    border: 1px solid #231E19;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C49A61;
+  }
+}
+
+/* Aged Parchment Document Simulation */
+.parchment-sheet {
+  background-color: #C9B99B;
+  background-image: 
+    radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.25) 0%, rgba(168, 143, 105, 0.35) 90%),
+    repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(140, 115, 80, 0.12) 28px);
+  color: #332A22;
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(120, 95, 60, 0.3),
+    inset 0 0 40px rgba(100, 75, 45, 0.35);
+  position: relative;
+}
+
+.parchment-subtle {
+  background-color: #D6C8AC;
+  color: #2F261E;
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.5),
+    inset 0 0 25px rgba(120, 95, 60, 0.2);
+}
+
+/* Metal Clip at Top of Clipboard (Phasmophobia Signature) */
+.metal-clipboard-clip {
+  background: linear-gradient(180deg, #D4D4D4 0%, #8A8A8A 30%, #4D4D4D 70%, #999999 100%);
+  border: 1px solid #2A2A2A;
+  box-shadow: 
+    0 6px 14px rgba(0,0,0,0.7),
+    inset 0 2px 2px rgba(255,255,255,0.7),
+    inset 0 -2px 3px rgba(0,0,0,0.8);
+  position: relative;
+}
+
+.metal-clipboard-clip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 6px;
+  background: #222;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.9), 0 1px 1px rgba(255,255,255,0.4);
+}
+
+/* Adhesive Tape Effect */
+.tape-strip {
+  background: rgba(235, 225, 200, 0.45);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  backdrop-filter: blur(1px);
+  border-top: 1px dashed rgba(255,255,255,0.4);
+  border-bottom: 1px dashed rgba(255,255,255,0.4);
+}
+
+/* Red Investigator Stamp */
+.case-stamp {
+  border: 2.5px solid #B4473E;
+  color: #B4473E;
+  font-family: 'Courier Prime', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 4px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  transform: rotate(-3deg);
+  opacity: 0.88;
+  mask-image: radial-gradient(circle, black 70%, transparent 100%);
+  text-shadow: 0 0 1px rgba(180, 71, 62, 0.4);
+}
+
+.case-stamp-green {
+  border: 2.5px solid #78966A;
+  color: #78966A;
+  font-family: 'Courier Prime', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 4px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  transform: rotate(2deg);
+  opacity: 0.9;
+}
+
+/* Realistic Polaroid Frame */
+.polaroid-card {
+  background: #F3EFE6;
+  padding: 10px 10px 28px 10px;
+  box-shadow: 
+    0 15px 30px -8px rgba(0, 0, 0, 0.7),
+    0 4px 8px -2px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.polaroid-card:hover {
+  transform: translateY(-4px) scale(1.02) rotate(0deg) !important;
+  box-shadow: 
+    0 22px 40px -10px rgba(0, 0, 0, 0.85),
+    0 6px 12px -2px rgba(196, 154, 97, 0.25);
+  z-index: 20;
+}
+
+/* Pushpin simulation */
+.pushpin {
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle at 35% 35%, #D44, #800);
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.6), inset 0 1px 2px rgba(255,255,255,0.7);
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+/* Evidence thread/yarn simulation */
+.evidence-line {
+  stroke: #B4473E;
+  stroke-width: 2;
+  stroke-dasharray: 4, 3;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.7));
+}
+
+/* Vignette overlay */
+.vignette-ambient {
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.75);
+}
+
+/* Ambient glow */
+.brass-glow {
+  box-shadow: 0 0 20px -3px rgba(196, 154, 97, 0.35);
+}
